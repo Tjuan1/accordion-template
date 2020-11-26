@@ -1,0 +1,276 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* primary/background color*/
+  --clr-primary-1: hsl(0, 0%, 89%);
+  /* primary/font color */
+  --clr-primary-font-1: hsl(0, 0%, 15%);
+  --clr-primary-font-2: hsl(0, 0%, 58%);
+  /* border color */
+  --clr-border: hsl(206, 14%, 31%);
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--clr-primary-1);
+  color: var(--clr-primary-font-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1rem;
+}
+h4 {
+  font-size: 0.7rem;
+}
+p {
+  font-size: 0.5rem;
+  margin-bottom: 1.25rem;
+  color: var(--clr-primary-font-2);
+}
+
+/*
+=============== 
+Questions
+===============
+*/
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90vw;
+  margin: 0rem auto;
+  background: var(--clr-primary-1);
+  padding: 0.5rem 2rem;
+  max-height: 90vh;
+}
+
+.container h3 {
+  line-height: 1.2;
+  font-weight: 500;
+  text-align: center;
+}
+
+.question {
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--clr-border);
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  box-shadow: 1rem;
+}
+
+.question h4 {
+  text-transform: none;
+  width: 70%;
+  margin-bottom: 0;
+}
+
+.question p {
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+}
+
+.question header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  width: 2rem;
+  height: 2rem;
+  /* change if want to have background and border in button */
+  background: var(--clr-primary-1);
+  border-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--clr-border);
+  cursor: pointer;
+  margin-left: 1rem;
+  align-self: center;
+  font-size: 1rem;
+}
+
+.btn:focus{
+  outline: none;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+
+}
+/*  global classes */
+.question-container{
+  display: block;
+  height: 80vh;
+  max-height: 85vh;
+  transition: all;
+  width: 100vw;
+}
+
+/*  title */
+.title {
+  width: 80vw;
+  margin: 0 auto;
+  max-width: 85vw;
+  display: block;
+}
+
+/* section */
+.section {
+  width: 75vw;
+  margin: 0 auto;
+  max-width: 80vw;
+  display: block;
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    margin: 5rem auto;
+    padding: 2.5rem 2rem;
+  }
+
+  .container h3 {
+    text-align: left;
+  }
+  
+  .section {
+    width: 60vw;
+    max-width: 70vw;
+    display: inline-block;
+  }
+
+  .question-container{
+    display: flex;
+    height: 75vh;
+    max-height: 80vh;
+    width: 80%;
+  }
+
+  .title {
+    width: 20vw;
+    margin: 0 auto;
+    max-width: 25vw;
+    display: inline-block;
+  }
+}
+
+
+
+/*
+=============== 
+question-container animation
+===============
+*/
+
+
+.question-container-enter{
+  animation: openContainer 0.4s ease-out forwards;
+}
+
+.question-container-exit-active{
+  animation: closeContainer 200s ease-out forwards;
+}
+
+@keyframes openContainer {
+  0% {
+      opacity: 0;
+      height: 0px;
+  }
+
+  50% {
+      opacity: 0;
+    /*   adjust this to your needs */
+      height: 150px; 
+  }
+
+  100% {
+      opacity: 1;
+  }
+
+}
+
+@keyframes closeContainer {
+  0% {
+    opacity: 1;
+}
+
+  50% {
+    opacity: 1;
+}
+
+  100% {
+    opacity: 0;
+}
+
+}
